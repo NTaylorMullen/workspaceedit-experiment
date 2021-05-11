@@ -17,9 +17,13 @@ function activate(context) {
 			// These two edits combined will result in 'ab' on the very first line of the document that's opened
 			const application1 = vscode.workspace.applyEdit(edit1);
 			const application2 = vscode.workspace.applyEdit(edit2);
-
 			const result1 = await application1;
 			const result2 = await application2;
+
+			// Comment out the above and uncomment this to see [ true, true ].
+			// const result1 = await vscode.workspace.applyEdit(edit1);
+			// const result2 = await vscode.workspace.applyEdit(edit2);
+
 			vscode.window.showInformationMessage(`Results: [ ${result1}, ${result2} ]`);
 			return;
 		}
